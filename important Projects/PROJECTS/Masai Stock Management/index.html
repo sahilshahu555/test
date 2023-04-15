@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stock Management</title>
+    <style>
+      /* All necessery styles here  */
+    </style>
+  </head>
+  <body>
+    <div id="create">
+      <h1>Add Stock in Portfolio</h1>
+      <form>
+        <input placeholder="Company Name" id="name" type="text" />
+        <select id="category">
+          <option value="">Stock Category</option>
+          <option value="Large Cap">Large Cap</option>
+          <option value="Mid Cap">Mid Cap</option>
+          <option value="Small Cap">Small Cap</option>
+        </select>
+        <input type="text" id="sector" placeholder="Sector" />
+        <input placeholder="Stock Price" id="price" type="number" />
+        <input placeholder="Quantity" id="quantity" type="number" />
+        <label for="">Add Date:- </label>
+        <input type="date" id="addDate" />
+        <input type="submit" value="Add Stock" />
+      </form>
+    </div>
+    <h1 id="total-price">Total Price:- <span>0</span></h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Stock Name</th>
+          <th>Category</th>
+          <th>Sector</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Total Cost</th>
+          <th>Add Date</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Append the rows here using JS  -->
+      </tbody>
+    </table>
+  </body>
+  <script>
+    // Write all necessery JS Here
+    document.querySelector("form").addEventListener("submit",setData)
+
+    let totalPrice=0;
+    let totalCost=0;
+
+    function setData (){
+        event.preventDefault()
+        let name=document.getElementById("name").value;
+        let category=document.getElementById("category").value;
+        let sector=document.getElementById("sector").value;
+        let price= parseInt(document.getElementById("price").value);
+        let quantity= parseInt(document.getElementById("quantity").value);
+        let addDate=document.getElementById("addDate").value;
+        totalCost=price*quantity;
+        totalPrice+=totalCost;
+      
+if( name==="" || category==="" || sector==="" || isNaN(price) || isNaN(quantity) || addDate==="" ){
+  alert("Fill all input fields")
+  return;
+}
+
+
+
+        let tr=document.createElement("tr");
+
+        let td1=document.createElement("td");
+        td1.textContent=name;
+
+        let td2=document.createElement("td");
+        td2.textContent=category;
+
+        let td3=document.createElement("td");
+        td3.textContent=sector;
+
+        let td4=document.createElement("td");
+        td4.textContent=price;
+
+        let td5=document.createElement("td");
+        td5.textContent=quantity;
+
+        let td6=document.createElement("td");
+        td6.textContent=totalCost;
+
+        let td7=document.createElement("td");
+        td7.textContent=addDate;
+
+        let td8=document.createElement("td");
+        td8.textContent="Delete";
+        td8.addEventListener("click",deleteFun)
+
+        tr.append(td1,td2,td3,td4,td5,td6,td7,td8)
+        document.querySelector("tbody").append(tr);
+        document.querySelector("span").textContent=totalPrice;
+
+    }
+
+    function deleteFun(){
+       
+      totalPrice-=parseInt(event.target.parentNode.querySelector("td:nth-child(6)").textContent);
+
+      event.target.parentNode.remove()
+      document.querySelector("span").textContent=totalPrice;
+    }
+
+  </script>
+</html>

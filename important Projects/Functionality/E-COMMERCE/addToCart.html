@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add to Cart</title>
+    <style>
+        body{
+            position: relative;
+            background-color: #f2dcdc;
+        }
+        .cartProd{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 80%;
+            margin: auto;
+            margin-top: 20px;
+        }
+        body > div >div{
+            margin: 30px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            border-radius: 10px;
+            position: relative;
+            top: 120px;
+        }
+        #image{
+            width:220px ;
+            height: 300px;
+        }
+        h1{
+           width: 100px;
+           margin: auto;
+           color: #11e523;
+           background-color: rgb(63, 61, 61);
+           text-align: center;
+           border-radius: 5px;
+           padding: 5px;
+        }
+        a{
+            text-decoration: none;
+        }
+        a>h1{
+           
+           color: #11e523;
+           background-color: rgb(63, 61, 61);
+           text-align: center;
+           border-radius: 5px;
+           margin-top: -47px;
+           padding: 5px;
+           margin-left: 250px;
+        }
+        #box{
+            display: flex;
+            justify-content: space-around;
+            align-items: center; 
+            font-size: 18px;
+            font-weight: bold;
+            width: 45%;
+            margin-left: 55%;
+            margin-bottom: 10px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            border-radius: 10px;
+            position: absolute;
+            top: 60px;
+        }
+        #quantity{
+            display: flex;
+            justify-content: space-around;
+            align-items: center; 
+            width: 30%;
+        }
+        #input{
+            border: 1px solid red;
+            border-radius: 5px;
+            padding: 5px ;
+            text-align: center;
+            width: 20%;
+        }
+        #promo{
+            width: 10%;
+            background-color: #11e523;
+            border-radius: 5px;
+            margin-left: -20px;
+            padding: 5px;
+            border: none;
+            font-size: 10px;
+            font-weight: bold;
+        }
+        #total{
+            margin-left: -20px;
+        }
+        #remove{
+            width: 30%;
+            background-color: #ef6666;
+            border-radius: 5px;
+           padding: 8px;
+            border: none;
+            margin-left: 40px;
+        }
+        #payment{
+            width: 10%;
+            background-color: #11e523;
+            color: #000;
+            border-radius: 5px;
+            margin-left: -10px;
+            padding: 10px ;
+            border: none;
+            font-size: 12px;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Cart</h1>
+    <a  href="index.html"><h1>Home</h1></a>
+   <div id="main"></div>
+  
+</body>
+<script>
+    var cart =JSON.parse(localStorage.getItem("cartObj"))||[];
+    var cartVal=0;
+   
+    if(cart.length === 0){
+
+        document.querySelector("body").textContent="Add Some Products To Cart";
+    }
+    else{
+       
+        displayCart();
+        totalPrice();
+    }
+
+    function displayCart(){
+        
+        document.querySelector("#main").textContent="";
+       cart.map(function(elem, index){
+           var div= document.createElement("div");
+           var image= document.createElement("img");
+           
+          image.setAttribute("id" ,"image");
+          image.setAttribute("src","https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/d62990c9fe8a439488d5aefc00bf59cb_9366/VALRUN_SHOES_Blue_GB2347_01_standard.jpg");
+          image.setAttribute("alt",elem.name);
+          var h5 =document.createElement("h5");
+          h5.textContent=elem.name;
+          
+          var box=document.createElement("div");
+          box.setAttribute("id","quantity");
+          var add=document.createElement("button");
+          add.textContent="+";
+          add.addEventListener("click",addFun);
+         
+
+          var price=document.createElement("p");
+          price.textContent=" ₹ "+elem.price
+          
+          var q=document.createElement("b");
+           q.textContent=1;
+
+          var sub=document.createElement("button");
+           sub.textContent="-";
+
+           var remove=document.createElement("button");
+           remove.textContent="Remove Item";
+           remove.setAttribute("id","remove")
+           remove.addEventListener("click",function(){removeItem(index)})
+          box.append(add,q,sub, price, remove)
+          div.append(image,h5, box)
+          div.setAttribute("class","cartProd");
+          document.querySelector("#main").append(div);
+         
+       });
+      
+    };
+    
+    function removeItem(index){
+      var deleted = cart.splice(index,1);
+      localStorage.setItem("cartObj", JSON.stringify(cart));
+      displayCart();
+    }
+
+    var quantity=1;
+   function addFun(){
+   
+    event.target.parentNode.querySelector("b").textContent=quantity++;
+   
+   }
+
+   function totalPrice(){
+    for(i=0;i<cart.length; i++){
+        cartVal+=cart[i].price;
+    }
+    
+       var div=document.createElement("div");
+       div.setAttribute("id" ,"box");
+       var p=document.createElement("p");
+       p.textContent="Total Price : "
+       var p1=document.createElement("p");
+       p1.textContent="Total Items : "+ cart.length;
+       var input=document.createElement("input");
+       input.setAttribute("id","input")
+       input.setAttribute("placeholder","Enter Promo Code")
+       var promo=document.createElement("button");
+       promo.setAttribute("id","promo")
+       promo.textContent="Apply Promo"
+       promo.addEventListener("click",addDiscount);
+       total=document.createElement("p");
+       total.textContent="₹ "+cartVal
+       total.setAttribute("id","total")
+        // 
+     function addDiscount(){
+       var select= document.getElementById("input").value;
+
+        if( select=== "masai30"){
+        document.getElementById("total").textContent=cartVal-((cartVal*30)/100);
+          
+        }else{
+            alert("Promo Code Is Not Valid")
+        }
+     };
+        // 
+        var Payment=document.createElement("a");
+        Payment.setAttribute("id","payment")
+        Payment.textContent="Payment"
+        Payment.setAttribute("href","pay.html")
+    
+    //  appending
+       div.append(p1,input,promo ,p,total,Payment);
+       document.querySelector("body").append(div);
+    };
+   
+</script>
+</html>

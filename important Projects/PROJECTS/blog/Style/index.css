@@ -1,0 +1,245 @@
+body{
+    padding: 0px;
+    margin: 0px;
+    background-color: rgb(208, 205, 215);
+    font-family: 'Oswald', sans-serif;
+    
+}
+
+/*-------- NAVBAR START --------------- */
+#main{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(133, 26, 232);
+    /* background-color: rgb(232, 187, 26); */
+
+    height: 100px;
+   box-shadow: rgb(245, 87, 87) 0px 20px 30px -10px;
+}
+#logo{
+    width: 10%;
+    height:70%;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    padding: 1px;
+    border: none;
+    background-color: rgb(246, 98, 98);
+    box-shadow: rgb(255, 255, 255) 0px 15px 30px -10px;
+
+
+}
+
+#navContent{
+    width: 60%;
+     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+a{
+   font-weight:bold ;
+    text-decoration: none;
+    color: rgb(54, 51, 51);
+   background-color: rgb(255, 105, 105);
+
+   padding: 10px;
+   border-radius: 10px;
+     box-shadow: rgb(255, 255, 255) 0px 15px 30px -10px;
+}
+
+a:hover, #logo:hover, #miniBox button:hover,#boxC button:hover{
+   background-color: rgb(135, 249, 119);
+  
+}
+#miniBox button:hover,#boxC button:hover{
+    background-color: rgb(251, 75, 63);
+}
+
+/*-------- NAVBAR END --------------- */
+
+/*-------- index START --------------- */
+#container1{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 10px;
+    width: 100%;
+   
+    margin-top: 50px;
+}
+#box{
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    flex-direction: column;
+    padding: 20px;
+    width: 60%;
+    margin: auto;
+    margin-top: 30px;
+    border-radius: 10px;
+    /* height: 100%; */
+    color: #ffffff;
+     background-color: rgb(66, 64, 68);
+     box-shadow: rgb(245, 87, 87) 0px 20px 30px -10px;
+     transition : all 0.5s ease-in-out;
+     
+}
+
+
+#box:hover{
+    transform: scale(1.16);
+ }
+
+#miniBox{
+    padding: 5px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+#miniBox button{
+    background-color: rgb(247, 240, 38);
+   
+    color: #191818;
+    font-size: 14px;
+    font-weight: bolder;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    
+}
+
+
+/*-------- index END --------------- */
+
+
+/*-------- CREATE START --------------- */
+#boxC{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    width: 40%;
+    padding: 20px;
+    /* height: 300px; */
+    margin: auto;
+    margin-top: 40px;
+    background-color: rgb(58, 59, 60);
+    border-radius: 20px;
+    color: #ffffff;
+    box-shadow: rgb(245, 87, 87) 0px 20px 30px -10px;
+}
+
+#boxC input{
+    width: 30%;
+    /* margin: 10px; */
+    padding: 10px 15px;
+    border-radius: 10px;
+}
+#boxC textarea{
+    width: 60%;
+    height: 100px;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+#boxC button{
+    margin: 20px;
+    padding: 15px 70px;
+    font-size: 20px;
+    border: none;
+    font-weight: bolder;
+    background-color: rgb(236, 229, 29);
+    box-shadow: rgb(245, 87, 87) 0px 0px 10px 0px;
+    border-radius: 10px;
+}
+
+/*-------- CREATE END --------------- */
+
+
+/*-------- VIEW START --------------- */
+#boxV{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    width: 60%;
+    padding: 50px;
+    /* height: 300px; */
+    margin: auto;
+    margin-top: 60px;
+    background-color: rgb(58, 59, 60);
+    border-radius: 20px;
+    color: #ffffff;
+    box-shadow: rgb(245, 87, 87) 0px 20px 30px -10px;
+}
+#boxV h1{
+    background-color: rgb(133, 26, 232);
+
+    width: 60%;
+    text-align: center;
+    border-radius: 10px;
+    padding: 10px;
+    color: rgb(250, 250, 250);
+    position: relative;
+    top: -30px;
+    box-shadow: rgb(250, 250, 250) 0px 5px 20px -5px;
+}
+#boxV #author{
+
+   position: relative;
+   top: 30px;
+}
+#boxV button{
+    margin: 20px;
+    padding: 15px 20px;
+    background-color: rgb(236, 229, 29);
+    box-shadow: rgb(245, 87, 87) 0px 0px 10px 0px;
+}
+
+
+
+/*-------- VIEW END -------------------*/
+
+/*-------- EDIT START--------------- */
+
+#boxE{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    width: 40%;
+    padding: 20px;
+    /* height: 300px; */
+    margin: auto;
+    margin-top: 40px;
+    background-color: rgb(58, 59, 60);
+    border-radius: 20px;
+    color: #ffffff;
+    box-shadow: rgb(245, 87, 87) 0px 20px 30px -10px;
+}
+
+#boxE input{
+    width: 30%;
+    /* margin: 10px; */
+    padding: 10px 15px;
+    border-radius: 10px;
+}
+#boxE textarea{
+    width: 60%;
+    height: 100px;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+#boxE button{
+    margin: 20px;
+    padding: 15px 70px;
+    background-color: rgb(236, 229, 29);
+    box-shadow: rgb(245, 87, 87) 0px 0px 10px 0px;
+}
+
+/*-------- EDIT END --------------- */
+

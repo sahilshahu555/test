@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <title>Masai Doctor Records</title>
+    
+    <style>
+      body{
+        
+      }
+     h1{ 
+      text-align: center;
+      color: #4488c0;
+      text-decoration: underline;
+      text-decoration-thickness: 3px;
+      margin-bottom: 30px;
+      font-size: 40px;
+    }
+     #filter{ display: none;}
+     #container{
+      display: flex;
+      justify-content: center;
+      height: 100vh;
+      gap: 4%;
+     }
+     #main{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 26%;
+      height: 72%;
+      margin-top: 3%;
+      
+      /* background-color: aqua; */
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+     }
+     form{
+      display: flex;
+      flex-direction: column;
+      /* align-items: center; */
+      justify-content: right;
+      width: 90%;
+      height: 95%;
+     }
+     
+     form > input,#specialization{
+      margin: 3px 0px 10px 0px;
+      padding: 10px ;
+      border:1px solid rgb(238, 234, 234);
+      border-radius: 5px;
+     }
+     #specialization{ color: #908f8f;}
+     label{
+      font-weight: bold;
+      color: #484646;
+     }
+     input:nth-child(13){
+      background-color: rgb(83, 104, 181);
+      color: #fcfbfb;
+      font-size: 16px;
+      border-radius: 18px;
+     }
+     /* table */
+     table{
+      
+      margin-top: 40px;
+      text-align: center;
+      border:1px solid rgb(238, 234, 234);
+      height: 0%;
+     }
+     thead >tr>th{
+      background-color: rgb(40, 112, 185);
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      font-weight: 400;
+     }
+     tbody >tr>td{
+      color: #262525;
+      /* background-color: #f8f7f7; */
+      font-weight: bold;
+      padding: 10px;
+      box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 0.5px;
+      
+     }
+     
+     tbody >tr:hover{
+      background-color: rgb(146, 159, 184);
+      
+     }
+     tbody >tr>td:nth-last-child(1){
+      background-color: rgb(226, 32, 38);
+      
+     }
+
+    </style>
+  </head>
+  <body>
+    <h1>HOSPITAL - DOCTOR RECORDS</h1>
+    <div id="container">
+    <!-- Use this form for data input  -->
+      <div id="main">
+        <form>
+          <label for="name">Doctor Name</label>
+          <input placeholder="Name" type="text" id="name"  />
+          <label for="doctor_id">Doctor ID</label>
+          <input placeholder="Doctor ID" type="text" id="doctor_id" />
+          <label for="specialization">Specialization</label>
+          <select id="specialization">
+            <option value="">Select Specialization</option>
+            <option value="Dermatologist">Dermatologist</option>
+            <option value="Dentist">Dentist</option>
+            <option value="Gynecologist">Gynecologist</option>
+          </select>
+          <label for="experience">Experience</label>
+          <input placeholder="Experience" type="number" id="experience" />
+          <label for="email">Email Address</label>
+          <input placeholder="Email" type="email" id="email" />
+          <label for="mobile">Mobile Number</label>
+          <input placeholder="Mobile No." type="number" id="mobile" />
+          <input type="submit" value="Submit" />
+        </form>
+      </div>
+        <!-- Use this Select tag for filter part  -->
+        <select id="filter" onchange="filFun()">
+          <option value="">Select Specialization</option>
+          <option value="Dermatologist">Dermatologist</option>
+          <option value="Dentist">Dentist</option>
+          <option value="Gynecologist">Gynecologist</option>
+        </select>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Doctor <br> ID</th>
+              <th>Specialization</th>
+              <th>Experience <br> in Years</th>
+              <th>Email Address</th>
+              <th>Mobile <br> Number</th>
+              <th>Role</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Append Rows here using JS & DOM  -->
+          </tbody>
+        </table>
+    </div>
+  </body>
+  
+  <script>
+    document.querySelector("form").addEventListener("submit", getData)
+
+    function getData(){
+      event.preventDefault();
+      var name = document.getElementById("name").value;
+      var doctor_id = document.getElementById("doctor_id").value;
+      var specialization = document.getElementById("specialization").value;
+      var experience = document.getElementById("experience").value;
+      var email = document.getElementById("email").value;
+      var mobile= document.getElementById("mobile").value;
+
+      var tr=document.createElement("tr");
+      
+      var td1=document.createElement("td");
+      td1.textContent = name;
+      var td2=document.createElement("td");
+      td2.textContent = doctor_id;
+      var td3=document.createElement("td");
+      td3.textContent = specialization;
+      var td4=document.createElement("td");
+      td4.textContent= experience;
+      var td5=document.createElement("td");
+      td5.textContent=email;
+      var td6=document.createElement("td");
+      td6.textContent=mobile;
+
+      var td7=document.createElement("td");
+      if(experience > 5){
+        td7.textContent="Senior";
+      }
+      else if(experience >= 2 && experience <=5){
+        td7.textContent="Junior";
+      }
+      else if(experience <= 1){
+        td7.textContent="Trainee"
+      }
+
+      var td8=document.createElement("td");
+      td8.textContent="Delete";
+      td8.addEventListener("click", rowDelete);
+
+      tr.append(td1,td2,td3,td4,td5,td6,td7,td8);
+      document.querySelector("tbody").append(tr);
+      
+    }
+
+    function rowDelete(){
+      event.target.parentNode.remove();
+    }
+
+  </script>
+</html>

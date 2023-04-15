@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payment page</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        align-items: center;
+        }
+      .form {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+      }
+      .inputContainer {
+        width: 500px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            border-radius: 10px;
+            padding: 30px 100px;
+         margin-top: 50px;
+      }
+      button {
+        display: block;
+        width: 60%;
+        margin: auto;
+        margin-top: 20px;
+        background-color: rgb(57, 251, 27);
+        border-radius: 10px;
+        padding: 5px 10px;
+      }
+      input{
+        border-radius: 3px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>Payment Page</h1>
+    </div>
+
+    <div class="inputContainer">
+      <div class="form">
+        <h4>Card Number :</h4>
+        <input id="CardN" type="text" />
+      </div>
+      <div class="form">
+        <h4>Name on the Card :</h4>
+        <input id="name" type="text" />
+      </div>
+      <div class="form">
+        <h4>Expiry Date :</h4>
+        <input id="expiry" type="text" />
+      </div>
+      <div class="form">
+        <h4>CVV :</h4>
+        <input id="cvv" type="text" />
+      </div>
+      <button id="submit">Submit</button>
+    </div>
+  </body>
+
+  <script>
+    document.getElementById("submit").addEventListener("click", submitP);
+
+    function submitP() {
+      var name = document.getElementById("name").value;
+      var card = document.getElementById("CardN").value;
+      var expiry = document.getElementById("expiry").value;
+      var cvv = document.getElementById("cvv").value;
+
+      if (name == "" || card == "" || expiry == "" || cvv == "") {
+        alert("Enter all the fields");
+      }
+
+      if (
+        name === "sahil " &&
+        card === "123" &&
+        expiry === "123" &&
+        cvv === "123"
+      ) {
+        window.location.replace("./otp.html");
+      } else {
+        alert("Enter the correct Card details");
+      }
+    }
+  </script>
+</html>

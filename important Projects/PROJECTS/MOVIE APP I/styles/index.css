@@ -1,0 +1,97 @@
+
+body{
+    font-family: 'Noto Sans', sans-serif;
+font-family: 'Roboto Condensed', sans-serif;
+}
+
+/* navbar */
+nav{
+    
+    border: 3px solid black;
+    margin-bottom: 20px;
+}
+nav>ul{
+    display: flex;
+    justify-content: right;
+
+}
+
+li{
+    margin-right: 100px;
+  list-style-type: none;
+}
+a{
+    text-decoration: none;
+    color: #000;
+    font-weight: bolder;
+}
+
+/* navbar */
+
+
+/* Movies */
+#movies{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 10px;
+    margin: 20px;
+   
+}
+
+#movies>div{
+    
+    width: 55%;
+    
+    margin: auto;
+    margin-top: 50px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 10px;
+    
+    
+}
+
+#movies>div>img{
+    width: 100%;
+    height: 300px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+#movies>div>div{
+    margin-bottom: 10px;
+    padding-left: 10px;
+}
+#movies>div h3,#movies>div p{
+    padding-left: 10px;
+}
+
+/* Movies */
+
+#select{
+    width: 11%;
+    padding: 10px;
+    font-weight: bold;
+    background-color: rgb(163, 79, 241);
+    color: white;
+    border-radius: 10px;
+    margin-left: 20px;
+    border: none;
+    font-size: 15px;
+}
+#slideshow{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+    
+}
+#slide{
+    
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    width: 80%;
+    height: 70vh;
+    background-repeat: no-repeat ;
+    margin-bottom: 10px;
+    /* padding: 20px; */
+}
+

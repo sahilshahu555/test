@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIRTUAL MCDONALD'S</title>
+    <style>
+        body{
+            padding: 0px;
+            margin: 0px;
+            background: rgb(63,94,251);
+background: radial-gradient(circle, rgb(100, 124, 247) 0%, rgb(247, 98, 127) 100%);
+/* background: linear-gradient(135deg, #71b7e6, #9b59b6); */
+        }
+        #container{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 10px;
+            
+            /* background: linear-gradient(135deg, #71b7e6, #9b59b6); */
+            padding: 30px;
+            border-radius: 20px;
+            width: 80%;
+            margin: auto;
+            height: 70vh;
+        }
+        .image{
+            width: 250px;
+            height: 120px;
+            border-radius: 10px;
+            box-shadow: rgba(255, 254, 254, 0.35) 0px 10px 15px;
+        }
+        .flex{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 5px;
+        }
+        #btn,#btn1{
+            box-shadow: rgba(255, 255, 255, 0.35) 0px 10px 15px;
+            display: block;
+            width: 250px;
+            margin: auto;
+            margin-top: 15px;
+            padding: 10px;
+            font-size: 26px;
+            border: none;
+            border-radius: 10px;
+            background-color: rgb(250, 219, 15);
+            color: #232222;
+            font-weight: bolder;
+        }
+        #btn:hover,#btn1:hover{
+            
+            background-color: rgb(247, 108, 74);
+        }
+
+
+        input{
+          /* padding: 10px; */
+            margin-right: 20px;
+        }
+        h1{
+            
+            box-shadow: rgba(255, 255, 255, 0.35) 0px 10px 15px;
+            text-align: center;
+            color: #232222;
+            width: 40%;
+            margin: auto;
+            /* margin-top: 5px; */
+            background-color: rgb(234, 106, 63);
+            padding: 10px;
+            border-radius: 10px;
+        }
+        #order{
+           margin-top: 10px;
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 10px;
+        }
+        .miniBox{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            
+        }
+        .miniBox>b{
+            margin-bottom: 5px;
+            /* background-color:rgb(241, 143, 110); */
+            border-radius: 5px;
+            padding: 3px;
+            color: #232222;
+            font-size: 20px;
+        }
+       
+    </style>
+</head>
+<body>   
+       
+       <h1>McDONALD'S FOOD RECOPIES</h1>
+       <div id="order"></div> 
+       <div id="b"></div>
+      <div id="container"></div>
+      <div id="container1"></div>
+
+       
+        <button type="submit" id="btn">Order Food</button>
+       
+       
+</body>
+<script>
+        
+//   Array  ******************************************************
+        let arr=[
+        {  
+            name:"Greek Fries ",
+            image_url:"https://hips.hearstapps.com/hmg-prod/images/wdy050121nationalmonth-003-1621446470.jpg",
+        },
+        {  
+            name:"Ovcharaska ",
+            image_url:"https://hips.hearstapps.com/hmg-prod/images/220907-delish-seo-chicken-tikka-masala-0212-eb-1675093094.jpg",
+        },
+        {    
+            name:"German Fried Rice",
+            image_url:"https://img.buzzfeed.com/buzzfeed-static/static/2022-03/5/0/asset/6201713e5c7e/sub-buzz-1009-1646440684-8.jpg",
+        },
+        {   
+            name:"Bangers and Mash",
+            image_url:"https://hips.hearstapps.com/hmg-prod/images/220907-delish-seo-chicken-tikka-masala-0212-eb-1675093094.jpg",       
+        },
+        {   
+            name:" Raj Samosa",   
+            image_url:"https://static.toiimg.com/thumb/70551342.cms?width=571&height=382&imgsize=60677",      
+        },
+        {   
+            name:" Skordalia",   
+            image_url:"https://www.seriouseats.com/thmb/0Y1OZPlgqesoE5keVCAqXvkm5V0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__images__2015__01__20140121-jalapeno-poppers-vicky-wasik-28-523d7a5a9c8f416888280808b39655b4.jpg",       
+        },
+        {   
+            name:"Anglesey Eggs",    
+            image_url:"https://c.ndtvimg.com/2022-05/pl007fjo_egg-curry_625x300_04_May_22.jpg",        
+        },
+        {   
+            name:"Apple Strudel",    
+            image_url:"https://c.ndtvimg.com/2022-03/jcliv9dg_shahi-paneer_625x300_15_March_22.jpg",       
+        },
+        {   
+            name:"Belgian Wafflesfood 9",     
+            image_url:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7q01YUuTc-j5Kbh_mBX6HvIDM7Pg0jkzBdg&usqp=CAU",        
+        },
+    ];
+// Display Function execution  ***********************************
+        displayFun();
+ // Display Function Assigning ***********************************
+        function displayFun(){
+        document.getElementById("container").textContent="";
+        arr.map(function(elm,index){
+
+            let box=document.createElement("div");
+            box.setAttribute("class", "flex");
+            let checkbox=document.createElement("input");
+            checkbox.setAttribute("type", "checkbox");
+            checkbox.setAttribute("id", "check");
+            checkbox.addEventListener("change" ,function(){
+             if(checkbox.checked) {fun1(elm)}
+              else if(!checkbox.checked){fun2(elm,index)}
+            })
+ 
+            let miniBox=document.createElement("div");
+            miniBox.setAttribute("class", "miniBox");
+            let image=document.createElement("img");
+            image.setAttribute("src",elm.image_url)
+            image.setAttribute("class","image")
+            image.setAttribute("id","Image")
+           
+            let name=document.createElement("b");
+            name.textContent=elm.name
+            // console.log(elm.name)
+            miniBox.append(name,image)
+    // appending
+
+        box.append(checkbox,miniBox)
+        document.getElementById("container").append(box);
+
+        })
+    
+    }
+        
+        var items=[];
+
+        console.log(items);
+//** function for adding and removing items in array *************
+        function fun1(elm){
+                items.push(elm)
+                console.log(items);
+                
+            
+        }
+        function fun2(elm,index){
+                items.splice(index,1)
+                console.log(elm, index);
+            
+        
+        }
+        
+    
+//*****************  PROMISE **************************************
+
+        let promise= new Promise(function(resolve, reject){
+        
+            document.getElementById("btn").addEventListener("click",showFun);
+                function showFun(){
+                let con= document.getElementById("container")
+                con.style.display="none"
+                let button=document.getElementById("btn")
+                //    button.style.display=""
+                button.textContent="This is your order"
+                button.style.display="none"
+            // arr mapping   
+                items.map(function(elm){
+                    let box=document.createElement("div");
+                    box.setAttribute("class", "flex");
+
+                    
+                    let miniBox=document.createElement("div");
+                    miniBox.setAttribute("class", "miniBox");
+                    let image=document.createElement("img");
+                    image.setAttribute("src",elm.image_url)
+                    image.setAttribute("class","image")
+                    let name=document.createElement("b");
+                     name.textContent=elm.name
+                    // appending
+                    miniBox.append(name,image)
+                    box.append(miniBox)
+                    document.querySelector("#order").append(box);
+                })
+            // arr.mapping end
+                let btn1=document.createElement("button");
+                    btn1.addEventListener("click",getBack)
+                    btn1.setAttribute("id","btn1")
+                    btn1.textContent="return"
+                    function getBack(){
+                    window.location.replace("./VIRTUAL-MCDONALD'S.html")
+                    }
+                    document.querySelector("#b").append(btn1);
+                    resolve(true);
+                    reject(new Error("Error is occurred "))
+            }
+
+        }).then(function(value){console.log(value);}
+        ).catch(function(error){console.log(error);})
+
+</script>
+</html>

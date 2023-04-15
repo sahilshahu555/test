@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRIVIGO</title>
+    <style>
+        button{
+            position: relative;
+            top: 100px;
+            width: 20%;
+            padding: 20px;
+            background-color: rgb(238, 185, 25);
+            border-radius: 10px;
+            border: none;
+            font-size: 20px;
+            color: rgb(255, 255, 255);
+            z-index: 9;
+        }
+
+       #logo{
+            width: 25%;
+       }
+       .h1{
+        display: none;
+        position:relative;
+        left: 400px;
+        top: 200px;
+        z-index: 10;
+        background-color: rgb(187, 198, 198);
+        /* height: 100px; */
+        padding: 30px;
+        width: 30%;
+        text-align: center;
+        border-radius: 10px;
+       }
+
+    </style>
+</head>
+<body>
+    <img  id="logo" src="https://auth.trivago.com/_static/icons/logo.svg" alt="">
+    <button id="log">Log In</button>
+    <div><h1 class="h1">HELLO EVERYONE</h1></div>
+</body>
+<script>
+            let button= document.getElementById("log")
+            let menu = document.querySelector("h1");
+
+            button.addEventListener("click", function(){
+                        location.href="login.html"
+                    })
+            button.addEventListener("mouseover", function () {
+                menu.style.display = "block";
+            }); 
+            // button.addEventListener("click", function () {
+            //     menu.style.display = "block";
+            // });   
+            menu.addEventListener("mouseover", function () {
+                menu.style.display = "block";
+            }); 
+            menu.addEventListener("mouseout", function () {
+                menu.style.display = "none";
+            }); 
+           
+
+</script>
+</html>

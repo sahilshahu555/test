@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: 'Noto Sans', sans-serif;
+font-family: 'Poppins', sans-serif;
+font-family: 'Roboto Condensed', sans-serif;
+        }
+        #search{
+            display: flex;
+            justify-content: space-around;
+            padding: 40px;
+            margin-bottom: 30px;
+            background-color: rgb(230, 232, 233);
+        }
+        #results{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        #divM{
+           display: grid; 
+           grid-template-columns: repeat(2,1fr);
+           /* gap: 10px; */
+           margin-left: 20px;
+        }
+        #searchBox{
+            width: 600px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+        #btn{
+            padding: 10px;
+            border: none;
+            margin-left: -5px;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            background-color: rgb(83, 80, 80);
+            color: #e4dede;
+        }
+        .a1{
+            padding: 10px;
+            border: none;
+            margin-left: -5px;
+            border-radius: 5px;
+            
+            background-color: rgba(185, 178, 178, 0.204);
+            color: #3c3939;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        .a2{
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            
+            background-color: #fff;
+            color: #1a1919;
+        }
+        #left>h5{
+            color: #e33333;
+        }
+        #left>h1{
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="search">
+        <div>
+            <input type="text" id="searchBox"/>
+        <button id="btn">Search</button>
+        </div>
+        
+        <div>
+            <button class="a1">Different Weather?</button>
+            <button class="a2">Metric : C ,m/s</button>
+            <button class="a1">Imperial: F, mph</button>
+
+        </div>
+    </div>
+    <div id="results">
+        <div id="left"></div>
+        <div id="right">
+
+            <iframe width="800" height="300" id="gmap_canvas" src="" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+
+        </div>
+    </div>
+</body>
+<script>
+    let APIkey="704a78be11968bbc5de1156f763f53a5";
+    let search=document.getElementById("search");
+    let searchBox=document.getElementById("searchBox");
+    let btn=document.getElementById("btn");
+    let map=document.getElementById("gmap_canvas")
+    let left=document.getElementById("left");
+   
+    
+
+btn.addEventListener("click",getData)
+
+async function getData(){
+    try{
+         let query= searchBox.value;
+         let count=7;
+         let weatherResponse =await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${query}&appid=${APIkey}`)
+ 
+// let weatherResponse =await fetch(`https://api.openweathermap.org/data/2.5/forecast/daily?q=${query}&cnt=${count}&appid=${APIkey}`)
+
+// 
+         let data=await weatherResponse.json()
+         
+        
+
+         console.log(data)
+         display(data);
+
+         
+         
+         
+          map.src=  `https://maps.google.com/maps?q=${query}&output=embed`
+         
+    }
+    catch(error){
+        // document.getElementById("result").textContent=error.message;
+        console.log(error.message)
+    }
+   
+
+}
+
+function display(data){
+    document.getElementById("left").textContent=""
+    try{
+        
+          
+          let date=document.createElement("h5");
+          date.textContent=new Date();
+          let city=document.createElement("h2");
+          city.textContent=data.name+",  "+data.sys.country
+          let temp=document.createElement("h1");
+          temp.textContent=Math.round(data.main.temp-273.15)+" °C"
+
+          let feel=document.createElement("b");
+          feel.id="feel"
+          feel.textContent=`Feels like ${Math.round(data.main.feels_like-273)} °C . `+data.weather[0].description;
+
+          let divM=document.createElement("div");
+          divM.id="divM"
+
+          let p0=document.createElement("p");
+          p0.textContent=">"+data.wind.speed+"m/s WNW";
+         
+          let p1=document.createElement("p");
+          p1.textContent=data.main.pressure+"hPa";
+
+
+          let p2=document.createElement("p");
+          p2.textContent="Humidity :"+data.main.humidity+" %";
+
+          let p3=document.createElement("p");
+          p3.textContent="UV :"+data.wind.gust;
+          let p4=document.createElement("p");
+          p4.textContent="Dew Point :"+Math.round(data.main.feels_like-281)+" °C";
+          let p5=document.createElement("p");
+          p5.textContent="Visibility :"+data.visibility/1000 +" km";
+
+          divM.append(p0,p1,p2,p3,p4,p5)
+
+        //   appending
+          document.getElementById("left").append(date,city,temp,feel,divM);
+          
+      
+    }catch(error){ 
+        
+        // document.querySelector("#results").textContent="City Not found!"
+        console.log("Not found")}
+  
+  
+}
+
+</script>
+</html>

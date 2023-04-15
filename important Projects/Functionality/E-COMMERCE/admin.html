@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <style>
+        h1{
+            text-align: center;
+           
+        }
+        form{
+            
+            display: flex;
+            
+            flex-direction: column;
+            width: 30%;
+            margin: auto;
+             box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+            border-radius: 10px;
+            padding: 40px;
+           
+        }
+        input{
+            margin: 10px;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        input:nth-last-child(1){
+            background-color: rgb(142, 226, 226);
+        }
+
+        input:nth-last-child(1):hover{
+            background-color: rgb(27, 222, 222);
+        }
+
+        label{
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        select{
+            width: 95.5%;
+            margin-left: 5px;
+            padding: 5px;
+            border-radius: 5px;
+            margin: 10px;
+        }
+        #sold{
+            color: green;
+            font-weight: bolder;
+            width: 95.5%;
+            margin-left: 5px;
+            padding: 5px;
+            border-radius: 5px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Product Details</h1>
+    <form >
+        <label for="name">Product name</label>
+        <input type="text" placeholder="Enter Product name" id="name">
+
+        <label for="category">Category</label>
+        <input type="text" placeholder="Enter category" id="category">
+
+        <label for="image">Image Url</label>
+        <input type="text" placeholder="Enter Image URL" id="image">
+
+        <label for="price">Price </label>
+        <input type="text" placeholder="Enter Price" id="price">
+
+        <label for="gender">Gender </label>
+       <select  id="gender" >
+         <option value="Male">Male</option>
+         <option value="Female">Female</option>
+       </select>
+
+       <button type="button" id="sold" value="false">Sold</button>
+       
+
+      <input id="submit" type="submit" name="submit" value="Submit" />
+
+    </form>
+</body>
+<script>
+    
+    function Product  (ProductName,category,image_Url,price,gender){
+      this.Product_name=ProductName;
+      this.Category =category ;
+      this.Image_Url  =image_Url ;
+      this.Price  ="₹ "+price  ;
+      this.Gender  =gender  ;
+      this.Sold  =false ;
+
+    }
+   const dataArr=JSON.parse(localStorage.getItem("Products")) ||[];
+
+   
+
+document.querySelector("form").addEventListener("submit", setData);
+
+function setData (){
+    event.preventDefault();
+
+    let name=document.getElementById("name").value;
+    let category =document.getElementById("category").value;
+
+    let image=document.getElementById("image").value;
+
+    let price=document.getElementById("price").value;
+
+    let gender=document.getElementById("gender").value;
+
+    
+
+    
+
+     let product= new Product( name, category, image, price, gender)
+
+     dataArr.push(product);
+     localStorage.setItem("Products",JSON.stringify(dataArr));
+
+
+     document.getElementById("name").value ="";
+
+     document.getElementById("category").value="";
+
+    document.getElementById("image").value="";
+
+    document.getElementById("price").value="";
+
+    document.getElementById("gender").value="select gender";
+
+    
+
+}
+     
+</script>
+</html>

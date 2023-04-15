@@ -1,0 +1,106 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    background-color: #eeeaea;
+}
+
+/* navbar css start  *************************** */
+#main{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(33, 32, 32);
+    height: 100px;
+    box-shadow: rgba(230, 26, 26, 0.35) 0px 5px 15px;
+}
+
+#pages{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    
+}
+
+
+#auth{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#main a{
+    text-decoration: none;
+    color: #e0d6d6;
+    margin: 40px;
+    font-size: 22px;
+    box-shadow: rgba(227, 27, 120, 0.35) 0px 5px 25px;
+   padding: 10px;
+   border-radius: 10px;
+   border: none;
+    
+}
+
+
+/* navbar css End  *************************** */
+
+/* search box css start */
+
+#searchBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+#searchBox input{
+    width: 700px;
+    padding: 12px;
+    font-size: 20px;
+    border-radius: 15px;
+    margin: 40px;
+    text-align: center;
+    background-color: rgb(238, 191, 190);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border: none;
+}
+
+/* search box css END */
+
+/* results start */
+ 
+#result{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 10px;
+}
+#box1{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    width: 30%;
+    height: 62vh;
+    margin: auto;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 20px;
+
+}
+#box1 img{
+  width: 300px;
+  margin: 20px;
+  border-radius: 40px;
+  box-shadow: rgba(227, 27, 120, 0.35) 0px 5px 25px;
+}
+#box1 b{
+    font-size: 22px;
+}
+#B{
+    font-size: 25px;
+    margin: 50px;
+}
+
+/* results end */
+

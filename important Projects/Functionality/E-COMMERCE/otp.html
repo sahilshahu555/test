@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OTP</title>
+  </head>
+  <body>
+    <h1>Enter Your OTP</h1>
+    <input id="otp" type="password" />
+    <button id="submit">Submit</button>
+  </body>
+
+  <script>
+    document.getElementById("submit").addEventListener("click", otp);
+
+    function otp() {
+      var value = document.getElementById("otp").value;
+      if (value == "1234") {
+        alert("Payment Successful");
+       
+        localStorage.removeItem("cartObj");
+       
+        window.location.replace("./index.html");
+      } else {
+        alert("Enter the correct otp");
+      }
+    }
+  </script>
+</html>

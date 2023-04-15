@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Youtube</title>
+    <style>
+#searchR{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    gap: 20px;
+    margin: 20px;
+}
+*{
+    padding: 0px;
+    margin: 0px;
+}
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(238, 235, 231);
+    height: 12vh;
+}
+#logo{
+    height: 150px;
+   /* margin-left: 100px; */
+}
+#searchBox{
+    width: 700px;
+    padding: 10px;
+    padding-left: 20px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    margin-right: -5px;
+}
+button{
+    padding: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+#icon{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 200px;
+
+}
+    </style>
+</head>
+<body> 
+    <nav>
+   
+            <img src="https://hindubabynames.info/downloads/wp-content/themes/hbn_download/download/social-media/youtube-logo.png" id="logo" alt="" srcset="">
+            <div>
+                <input type="text" placeholder="Search " id="searchBox" >
+                <button onClick="fetchData()">SEARCH</button>
+            </div>
+            <div id="icon">
+                <i class="fa-solid fa-video"></i>
+                <i class="fa-regular fa-bell"></i>
+                <h4>Profile</h4>
+            </div>
+    </nav>
+        <div id="searchR"></div>
+</body>
+<script >
+         const API_KEY="AIzaSyD1Fa6QGe9FeqmxLx8uXBfogkNbVdd_ti4";
+        //  const API_KEY="AIzaSyAlS6i4HYxmHndlLTn9DSxw3TlKqWm95ZM";
+         let searchR = document.getElementById("searchR");
+
+
+        window.onload= async function(){
+            let q="most popular videos in India"
+            let data = await fetch(
+                        `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${q}&type=video&key=${API_KEY}`
+                    );
+                    data = await data.json();
+                    let videos = data.items;
+                    displayData(videos);
+        }
+
+        async function fetchData() {
+            
+            let q=document.getElementById("searchBox").value;
+            let data = await fetch(
+                `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${q}&type=video&key=${API_KEY}`
+            );
+            data = await data.json();
+            let videos = data.items;
+            displayData(videos);
+        }
+         
+
+      function displayData(videos){
+        
+          searchR.textContent="";
+            videos.forEach(
+            ({
+            id: { videoId },
+            snippet: {
+                title,
+                thumbnails: {
+                medium: { url },
+                },
+            },
+            }) => {
+
+            let videoBox = document.createElement("div");
+
+            let videoLink = document.createElement("iframe");
+            videoLink.src = `https://www.youtube.com/embed/${videoId}`;
+            videoLink.width = "100%";
+            videoLink.height = "350px";
+             let Title=document.createElement("b");
+             Title.textContent=title;
+            videoBox.append(videoLink,Title);
+
+            searchR.append(videoBox);
+            });
+   }
+   document.getElementById("logo").addEventListener("click",getHome)
+   function getHome(){
+    window.location.replace("./youtube.html")
+   }
+
+</script>
+</html>
+

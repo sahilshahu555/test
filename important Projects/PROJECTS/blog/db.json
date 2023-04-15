@@ -1,0 +1,52 @@
+{
+  "blogs": [
+    {
+      "title": "Textiles ",
+      "desc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit sunt omnis quo hic! Error deleniti eius, dolor doloremque adipisci commodi nisi saepe quisquam! Sunt ",
+      "author": "Mr. Rajesh Kumar ",
+      "id": 1
+    },
+    {
+      "title": "Future Technology ",
+      "desc": "hello",
+      "author": "Rahul Jadhav",
+      "id": 2
+    },
+    {
+      "title": "Electric Cars ",
+      "desc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit sunt omnis quo hic! Error deleniti eius, dolor doloremque adipisci commodi nisi saepe quisquam! Sunt ",
+      "author": "James Williams ",
+      "id": 3
+    },
+    {
+      "title": "Festivals in India",
+      "desc": "  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit sunt omnis quo hic! Error deleniti eius, dolor ",
+      "author": "Ganesh Amulya ",
+      "id": 4
+    },
+    {
+      "title": "Rocket Science ",
+      "desc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit sunt omnis quo hic! Error deleniti eius, dolor doloremque adipisci commodi nisi saepe quisquam! Sunt ",
+      "author": "Mr. Robert Edward ",
+      "id": 5
+    },
+    {
+      "title": "Cyber Attacks ",
+      "desc": "  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit sunt omnis quo hic! Error deleniti eius, dolor Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit sunt omnis quo hic! Error deleniti eius, dolor Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit sunt omnis quo   ",
+      "author": "Mr. Ram Kale",
+      "id": 6
+    },
+    {
+      "title": "Javascript Study ",
+      "desc": "hello",
+      "author": "Mr. Sahil Shahu",
+      "id": 7
+    },
+    {
+      "title": "My Family",
+      "desc": "cnssdjncsldkcnslkcmsckmsk",
+      "author": "Mr. James  Header ",
+      "id": 9
+    }
+  ]
+}

@@ -1,0 +1,276 @@
+/**
+ * /* Css Reset
+ *
+ * @format
+ */
+
+* {
+  margin: 0;
+  padding: 0;
+  
+  
+ }
+ body{
+  background-color: rgb(179, 184, 188);
+ }
+ html{
+  scroll-behavior: smooth;
+ }
+ header{ 
+  color:black ;
+  border: 4px solid black;
+  border-radius: 15px;
+  background-color: rgb(242, 172, 73);
+ }
+/*;;;;;;;;;;;;;; Navigation Bar;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; */
+#navbar {
+  position:sticky;
+  top: 0px; 
+  display:flex;
+  /* flex-direction: column; */
+   justify-content: center;
+  align-items: center;
+  height: 13vh;
+  width: 100vw;
+  background-color: rgb(58, 55, 57);
+  box-shadow: rgb(255, 255, 255) 0px 5px 15px;
+  
+ }
+   /* #navbar::before {
+    content: "";
+    background-color: rgb(22, 21, 21);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.4;
+    } */
+  /* Navbar: Logo and Image  */
+  #logo {
+  margin: 10px 15px;
+  }
+  #logo img {
+  margin: 3px 6px;
+  height: 56px;
+  }
+  /* Navbar: List Items Styling */
+  #navbar ul {
+  display: flex;
+  }
+ #navbar ul li {
+  list-style: none;
+  font-size: 1.5rem;
+ }
+ #navbar ul li a:hover {
+  color: black;
+  background-color: white;
+
+ }
+ #navbar ul li a {
+  color: rgb(251, 241, 241);
+  padding: 5px 10px;
+  margin: 10px 4px;
+  border-radius: 15px;
+  display: block;
+  text-decoration: none;
+  font-weight: bold;
+  /* box-shadow: rgb(255, 255, 255) 0px 5px 15px; */
+
+ }
+/* ;;;;;;;;;;;;;;;;;;;;;;;;;; Home Section Start;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;*/
+#home {
+  display: flex;
+  flex-direction: column;
+  padding: 5px 250px;
+  height: 550px;
+  justify-content: center;
+  align-items: center;
+  font-family: "Baloo Bhai 2", cursive;
+}
+#home::before {
+  content: "";
+  background: url("../Images/food images/5.jpg") no-repeat center center/cover;
+  position: absolute;
+  height: 90%;
+  width: 100%;
+  z-index: -1;
+  opacity: 0.95;
+}
+
+#home h1 {
+  color: rgb(246, 126, 51);
+  text-align: center;
+}
+#home p {
+  color: white;
+  text-align: center;
+}
+/* ;;;;;;;;;;;;;;;;;;;;;;;;;; Home Section End;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;*/
+/* ;;;;;;;;;;;;;;;;;;;;;;;;;; Our Services Section start;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;*/
+#services {
+  display: flex;
+  margin: 35px;
+  /* margin-bottom: 10px; */
+
+
+}
+#harsha{
+  /* background-color: rgb(226, 239, 121); */
+  height: 490px;
+  margin-bottom: 20px;
+
+}
+#harsha h1{
+  display: block;
+  margin:  auto ;
+  background-color: rgb(244, 115, 115);
+  /* border: 4px solid black; */
+  border-radius: 15px;
+  width: 300px;
+  margin-top: 100px;
+  box-shadow: rgb(5, 5, 5) 0px 5px 15px;
+  
+}
+/* #harsha::before {
+  content: "";
+  background: url("../Images/food images/1.jpg") no-repeat center center/cover;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: 0.85;
+} */
+.box {
+  border: 3px solid red;
+  padding: 35px;
+  margin: 3px;
+  border-radius: 20px;
+  background-color: rgb(204, 235, 245);
+}
+.box img {
+  height: 100px;
+  display: block;
+  margin: auto;
+
+}
+.box p{ 
+  font-size: 1.2rem;
+  font-family:Arial, Helvetica, sans-serif
+}
+/* ;;;;;;;;;;;;;;;;;;;;;;;;;; Our Services Section End;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;*/
+/* ;;;;;;;;;;;;;;;;;;;;;;;;;; Our Clint Section Start;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;*/
+#client section{
+ height: 350px;
+ position: relative;
+}
+#harsh h1{ 
+  color: black;
+}
+#client{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 23px;
+}
+.item{
+  padding: 30px;
+  margin:  10px;
+}
+.item img{
+  height: 130px;
+  margin: 15px;
+  border: 4px solid rgb(18, 17, 17);
+  border-radius: 10px;
+}
+#harsh::before {
+  content: "";
+  background: url("../Images/food images/5.jpg") no-repeat center center/cover;
+  position: absolute;
+  height: 55%;
+  width: 100%;
+  z-index: -1;
+  opacity: 0.9;
+}
+/* ;;;;;;;;;;;;;;;;;;;;;;;;;; Our Clint Section End;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;*/
+/* ;;;;;;;;;;;;;;;;;;;;;;;;;; Contact Us Section Start;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;*/
+#contact{
+  position: relative;
+  height: 570px;
+  
+}
+#contact::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: 0.85;
+  background: url("../Images/Contact us/8.jpg") no-repeat center center/cover;
+
+}
+/* ;;;;;;;;;;;;;;;;;;;;;;;;;; Contact Us Section End;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;*/
+/* ;;;;;;;;;;;;;;;;;;;;;;;;;; Form Section Start;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;*/
+#contactbox{
+  display: flex;
+  /* justify-content:left; */
+  align-items: center;
+  padding-bottom: 75px ;
+  margin: 20px;
+}
+#contactbox input,
+#contactbox textarea{
+  width: 85%;
+  padding:0.4rem;
+  border: 2px solid black;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+#contactbox-form{
+  width: 30%;
+}
+#contactbox label{
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+#raju{
+  width: 290px;
+}
+/* ;;;;;;;;;;;;;;;;;;;;;;;;;; Form Section End;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;*/
+
+
+/* ;;;;;;;;;;;;;;;;;;;;;;;;;; Footer Start;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;*/
+footer{
+  background: black;
+  color: white;
+  padding: 10px 20px;
+}
+/* ;;;;;;;;;;;;;;;;;;;;;;;;;; Footer Start;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;*/
+
+
+
+
+
+/*;;;;;;;;;;;;;;;;;;;;;;; Utility Classes Start;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; */
+.sahil {
+  font-size: 2.5rem;
+  padding: 15px;
+  font-family: "Baloo Bhai 2", cursive;
+}
+.shahu {
+  font-size: 2rem;
+  padding: 15px;
+  font-family: "Baloo Bhai 2", cursive;
+}
+.btn {
+  margin: 10px 10px;
+  padding: 5px 20px;
+  border: 3px solid black;
+  border-radius: 8px;
+  font-weight: bold;
+  background-color: aqua;
+  cursor: pointer;
+}
+.center {
+  text-align: center;
+}
+/*;;;;;;;;;;;;;;;;;;;;;;; Utility Classes End ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; */

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Todo</title>
+</head>
+<body>
+    <h1>WELCOME TODO APP</h1>
+    <div id="main">
+    <div id="mainContainer">
+        <input type="text" placeholder="Enter todo Item" id="newTodoInput">
+        <button id="addTodoBtn" onclick="addTodo()">ADD</button>
+        <!-- <br> -->
+        <div id="Container">
+            <ul id="todoContainer">
+                <!-- append Here -->
+            </ul>
+        </div>
+        <br><br>
+        </div>
+        <div id="btn">
+        <input type="number" placeholder="Enter ID to delete" id="deleteTodoID">
+        <button id="deleteTodoBtn" onclick="deleteTodo()">DELETE</button>
+        <br><br>
+
+        <input type="number" placeholder="Enter ID to Update "
+        id="updateById">
+        <input type="text"
+        placeholder="Enter Text to Update"
+        id="updatedText">
+        <button id="updateTodoBtn" onclick="updateTodo()">UPDATE</button>
+
+    </div>
+</div>
+    <script src="index.js"></script>
+</body>
+</html>

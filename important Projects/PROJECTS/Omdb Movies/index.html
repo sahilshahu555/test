@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Web Movie App</title>
+    <style>
+      /* Write necessery styles here  */
+      #serach{
+        width: 40%;
+        margin: auto;
+        margin-bottom: 30px;
+      }
+      #search-inp{
+        padding: 10px;
+        margin: 10px;
+        width: 200px;
+      }
+      #search-btn{
+        font-size: 22px;
+        padding: 5px;
+        width: 150px;
+        border-radius: 10px;
+        background-color: rgb(246, 136, 102);
+        color: white;
+      }
+      #movie_container{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 10px;
+      }
+      #movie_container>div{
+        width: 60%;
+        margin: auto;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        box-sizing: border-box;
+      }
+      #movie_container>div>img{
+        width: 100%;
+        height: 400px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="serach">
+      <input type="text" id="search-inp" placeHolder="Search"/>
+      <button id="search-btn">Search</button>
+    </div>
+    <div id="movie_container"></div>
+  </body>
+
+  <script>
+    // Write necessery JS here
+
+     let containerS=document.getElementById("movie_container");
+     let searchS=document.getElementById("search-inp");
+     let buttonS=document.getElementById("search-btn");
+     buttonS.addEventListener("click",showData)
+
+async function showData (){
+  try{
+        let query = searchS.value
+
+        const response= await fetch (`https://www.omdbapi.com/?i=tt3896198&apikey=e6b59ead&s=${query}`);
+        const data=await response.json();
+        console.log(data.Search)
+        let movies= data.Search;
+        display(movies);
+  }
+    catch{(error)=>console.log(error);}
+}
+function display(movies){
+  let h2="Movie not found!";
+  try{
+  containerS.innerHTML="";
+  let HTML="";
+  movies.forEach((elm)=>{
+    HTML+=`<div> 
+      <img src=${elm.Poster} class="poster" />
+      <h2 class="title">${elm.Title}</h2>
+      </div>`;
+      containerS.innerHTML=HTML;
+  })
+  }
+  catch{
+    (error)=>{console.log(error);}
+    containerS.innerHTML=`<h2 class="error-container">${h2}</h2>`;
+  }
+}
+  </script>
+</html>

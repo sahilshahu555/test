@@ -1,0 +1,59 @@
+.cal{
+  width: 340px;
+  margin: 100px auto;
+  padding: 20px;
+  background: rgb(151, 50, 214);
+  border: 10px solid rgb(83, 89, 76);
+  border-radius: 20px;
+  
+}
+
+#answer{
+  text-align: right;
+  border: 3px solid rgb(42, 39, 39);
+  background-color: lightgray;
+  color:black;
+  padding: 5px;
+  font-size: 30px;
+  width: 320px;
+  height: 45px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  border-radius: 10px;
+  
+}
+.button{
+  background: linear-gradient(135deg, rgb(251, 212, 69),rgb(50, 214, 132));
+  border-radius: 10px;
+  margin: 2px;
+  height: 55px;
+  width: 80px;
+  color: #fff;
+  font-size: 30px;
+  font-weight: bold;
+  border: 2px solid rgb(253, 116, 92);
+  
+  /* float:left; */
+}
+.button1{
+  background: rgb(247, 50, 50);
+  border-radius: 10px;
+  margin: 5px;
+  height: 55px;
+  width: 160px;
+  color: #000;
+  font-size: 30px;
+  font-weight: bold;
+  border: 2px solid rgb(246, 241, 241);
+}
+.button2{
+  background: rgb(83, 247, 50);
+  border-radius: 10px;
+  margin: 4px;
+  height: 55px;
+  width: 160px;
+  color: #000;
+  font-size: 30px;
+  font-weight: bold;
+  border: 2px solid rgb(255, 254, 254);
+}
