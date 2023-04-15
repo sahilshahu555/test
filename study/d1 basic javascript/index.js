@@ -35,7 +35,7 @@ var f=true;
 // console.log(a,typeof(a))
 // console.log(b,typeof(b))
 // console.log(c,typeof(c))
-// console.log(d,typeof(d))
+//  console.log(d,typeof(d))
 // console.log(f,typeof(f))
 
 // ************* end of topic *******
@@ -47,7 +47,8 @@ var f=true;
 
 // 1 objects + Function + Arrays
 
-let person={
+let person=
+{
    firstName: "Sahil",
     age : 26,
     skills:["css","java"],
@@ -86,9 +87,9 @@ let array= [1,2,3,4,5,6,7,8];
 
 // array.unshift(1)
 
-// array.splice(2,3,"sahil",1,1,1)
-let a6=array.slice(7)
-// console.log(a6)
+// array.splice(2,3)
+// let a6=array.slice(7)
+// console.log(array)
 
 
 
@@ -105,16 +106,30 @@ array1.push(1)
 
 // 3 FUNCTION
 // help()
-function help(a,b){
-    return a*b;
-    // console.log(a+b)
+
+function addition (){
+    return 5;
+    // console.log("hi")
 }
-let d1=help(16,2)
-console.log(d1)
-document.getElementById("speed").textContent=d1+ "km/hr"
+let d4=addition ()
+    
+    // console.log(d4)
+
+
+    let add= (a,b)=>{
+        // return 5;
+      
+        console.log(`${a} ${b}`)
+    }
+    add("sahil" , "shahu");
+        
+        // console.log(d4)
+// document.getElementById("speed").textContent=d1+ "km/hr"
 
 
 // ************* end of topic *******
+
+
 
 
 
