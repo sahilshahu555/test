@@ -1,0 +1,206 @@
+{
+	"rooms": [
+		{
+			"id": 1,
+			"name": "Standard Room",
+			"description": "A cozy standard room with a queen-size bed and a private bathroom. Perfect for solo travelers or couples. Perfect for a romantic getaway.",
+			"capacity": 2,
+			"price": 100,
+			"featured": true,
+			"image": "https://via.placeholder.com/400x250?text=Standard+Room",
+			"amenities": [
+				"Free Wi-Fi",
+				"Flat-screen TV",
+				"Air conditioning",
+				"Mini fridge",
+				"Coffee maker"
+			],
+			"size": "25 sqm",
+			"bed": "Queen-size bed",
+			"bathroom": "Private bathroom with shower"
+		},
+		{
+			"id": 2,
+			"name": "Deluxe Room",
+			"description": "A spacious deluxe room with a king-size bed, a private bathroom, and a balcony with a view. Perfect for a romantic getaway.",
+			"capacity": 2,
+			"price": 150,
+			"featured": false,
+			"image": "https://via.placeholder.com/400x250?text=Deluxe+Room",
+			"amenities": [
+				"Free Wi-Fi",
+				"Flat-screen TV",
+				"Air conditioning",
+				"Mini fridge",
+				"Coffee maker",
+				"Balcony with view"
+			],
+			"size": "30 sqm",
+			"bed": "King-size bed",
+			"bathroom": "Private bathroom with shower and bathtub"
+		},
+		{
+			"id": 3,
+			"name": "Suite",
+			"description": "A luxurious suite with a king-size bed, a private bathroom, a living area, and a balcony with a view. Perfect for families or groups.",
+			"capacity": 4,
+			"price": 250,
+			"featured": true,
+			"image": "https://via.placeholder.com/400x250?text=Suite",
+			"amenities": [
+				"Free Wi-Fi",
+				"Flat-screen TV",
+				"Air conditioning",
+				"Mini fridge",
+				"Coffee maker",
+				"Living area",
+				"Balcony with view"
+			],
+			"size": "50 sqm",
+			"bed": "King-size bed and sofa bed",
+			"bathroom": "Private bathroom with shower and bathtub"
+		},
+		{
+			"id": 4,
+			"name": "Family Room",
+			"description": "A spacious family room with two queen-size beds, a private bathroom, and a view of the pool. Perfect for families or groups.",
+			"capacity": 4,
+			"price": 200,
+			"featured": true,
+			"image": "https://via.placeholder.com/400x250?text=Family+Room",
+			"amenities": [
+				"Free Wi-Fi",
+				"Flat-screen TV",
+				"Air conditioning",
+				"Mini fridge",
+				"Coffee maker",
+				"Pool view"
+			],
+			"size": "40 sqm",
+			"bed": "Two queen-size beds",
+			"bathroom": "Private bathroom with shower"
+		},
+		{
+			"id": 5,
+			"name": "Executive Suite",
+			"description": "A luxurious executive suite with a king-size bed, a private bathroom, a living area, and a balcony with a view. Perfect for business travelers or couples.",
+			"capacity": 2,
+			"price": 300,
+			"featured": false,
+			"image": "https://via.placeholder.com/400x250?text=Executive+Suite",
+			"amenities": [
+				"Free Wi-Fi",
+				"Flat-screen TV",
+				"Air conditioning",
+				"Mini fridge",
+				"Coffee maker",
+				"Living area",
+				"Balcony with view"
+			],
+			"size": "50 sqm",
+			"bed": "King-size bed",
+			"bathroom": "Private bathroom with shower and bathtub"
+		},
+		{
+			"id": 6,
+			"name": "Honeymoon Suite",
+			"description": "A romantic honeymoon suite with a four-poster king-size bed, a private bathroom with a jacuzzi, and a balcony with a view. Perfect for couples celebrating a special occasion.",
+			"capacity": 2,
+			"price": 400,
+			"featured": true,
+			"image": "https://via.placeholder.com/400x250?text=Honeymoon+Suite",
+			"amenities": [
+				"Free Wi-Fi",
+				"Flat-screen TV",
+				"Air conditioning",
+				"Mini fridge",
+				"Coffee maker",
+				"Four-poster bed",
+				"Jacuzzi",
+				"Balcony with view"
+			],
+			"size": "60 sqm",
+			"bed": "Four-poster king-size bed",
+			"bathroom": "Private bathroom with shower and jacuzzi"
+		},
+		{
+			"id": 7,
+			"name": "Presidential Suite",
+			"description": "A grand presidential suite with two king-size beds, a private bathroom with a jacuzzi and a sauna, a living area, and a balcony with a view. Perfect for VIPs or guests who want to indulge in luxury.",
+			"capacity": 4,
+			"price": 1000,
+			"featured": true,
+			"image": "https://via.placeholder.com/400x250?text=Presidential+Suite",
+			"amenities": [
+				"Free Wi-Fi",
+				"Flat-screen TV",
+				"Air conditioning",
+				"Mini fridge",
+				"Coffee maker",
+				"Two king-size beds",
+				"Living area",
+				"Jacuzzi",
+				"Sauna",
+				"Balcony with view"
+			],
+			"size": "120 sqm",
+			"bed": "Two king-size beds",
+			"bathroom": "Private bathroom with shower, jacuzzi, and sauna"
+		},
+		{
+			"id": 8,
+			"name": "Penthouse",
+			"description": "A luxurious penthouse with three bedrooms, a spacious living area, a private rooftop terrace with a pool, and a breathtaking view of the city. Perfect for guests who want the ultimate luxury experience.",
+			"capacity": 6,
+			"price": 5000,
+			"featured": false,
+			"image": "https://via.placeholder.com/400x250?text=Penthouse",
+			"amenities": [
+				"Free Wi-Fi",
+				"Flat-screen TV",
+				"Air conditioning",
+				"Mini fridge",
+				"Coffee maker",
+				"Three bedrooms",
+				"Spacious living area",
+				"Private rooftop terrace",
+				"Infinity pool with view"
+			],
+			"size": "300 sqm",
+			"bed": "Two king-size beds, two queen-size beds",
+			"bathroom": "Three private bathrooms with shower and bathtub"
+		}
+	],
+	"users": [
+		{
+		  "email": "jane.doe@example.com",
+		  "password": "aBc123!",
+		  "token": "nFJ8s7Ld3kPm2"
+		},
+		{
+		  "email": "john.smith@example.com",
+		  "password": "4iGt9u#rDx",
+		  "token": "eRt6yHfG3qZw1"
+		},
+		{
+		  "email": "alice.wonderland@example.com",
+		  "password": "P@ssw0rd",
+		  "token": "aBcDeFgHiJkLmN"
+		},
+		{
+		  "email": "bob.johnson@example.com",
+		  "password": "5tGh7uJkL3dE",
+		  "token": "yGt8hFjKl2mNpR"
+		},
+		{
+		  "email": "sara.thomas@example.com",
+		  "password": "p@55W0rd",
+		  "token": "sDfGhJkLmNpQr5"
+		},
+		{
+		  "email": "max.wilson@example.com",
+		  "password": "aBc!2345",
+		  "token": "nBvCmKlJ8hGfD2"
+		}
+	  ]	  
+}

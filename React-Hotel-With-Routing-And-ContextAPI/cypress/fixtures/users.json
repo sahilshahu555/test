@@ -1,0 +1,32 @@
+[
+    {
+      "email": "jane.doe@example.com",
+      "password": "aBc123!",
+      "token": "nFJ8s7Ld3kPm2"
+    },
+    {
+      "email": "john.smith@example.com",
+      "password": "4iGt9u#rDx",
+      "token": "eRt6yHfG3qZw1"
+    },
+    {
+      "email": "alice.wonderland@example.com",
+      "password": "P@ssw0rd",
+      "token": "aBcDeFgHiJkLmN"
+    },
+    {
+      "email": "bob.johnson@example.com",
+      "password": "5tGh7uJkL3dE",
+      "token": "yGt8hFjKl2mNpR"
+    },
+    {
+      "email": "sara.thomas@example.com",
+      "password": "p@55W0rd",
+      "token": "sDfGhJkLmNpQr5"
+    },
+    {
+      "email": "max.wilson@example.com",
+      "password": "aBc!2345",
+      "token": "nBvCmKlJ8hGfD2"
+    }
+  ]
