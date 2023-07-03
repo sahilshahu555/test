@@ -1,0 +1,43 @@
+.App{
+    text-align: center;
+}
+
+.restaurants_wrapper{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+}
+
+.restaurant_card{
+    display: flex;
+    border: 2px solid grey;
+    padding: 10px;
+    gap: 50px;
+}
+
+.pagination_wrapper{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btns{
+    width: 30px;
+    height: 30px;
+    color: white;
+}
+
+.restaurant_single_wrapper{
+    display: flex;
+    justify-content: center;
+}
+
+.restaurant_single_card{
+    display: flex;
+    border: 2px solid grey;
+    padding: 10px;
+    gap: 50px;
+    width: 500px;
+}
