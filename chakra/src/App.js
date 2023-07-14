@@ -4,7 +4,7 @@ import { Routes, Route, Link } from "react-router-dom"
 import AddRestaurant from "./pages/AddRestaurant"
 import EditRestaurant from "./pages/EditRestaurant"
 
-export default function App() {
+export default function App (){
   return (
     <div className="App">
       {/* Navbar Start */}
@@ -13,6 +13,7 @@ export default function App() {
         <Link to="/addrestaurant">ADD RESTAURANT</Link>
       </div>
       {/* Navbar end */}
+      {/*  */}
 
       {/*  All Routes  */}
       <Routes>
