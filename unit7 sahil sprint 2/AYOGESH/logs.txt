@@ -1,0 +1,104 @@
+GET
+/signup
+17:19:55
+1 milliseconds
+GET
+/signup
+17:19:57
+0 milliseconds
+GET
+/signup
+17:20:00
+0 milliseconds
+POST
+/signup
+17:22:14
+8 milliseconds
+POST
+/signup
+17:24:59
+1 milliseconds
+POST
+/signup
+17:25:39
+1 milliseconds
+POST
+/login
+17:27:50
+3 milliseconds
+POST
+/login
+17:28:21
+1 milliseconds
+GET
+/products
+11:27:55
+7 milliseconds
+
+
+GET
+/products?secrettoken=secret1234
+11:28:46
+4 milliseconds
+
+
+POST
+/products/create?secrettoken=secret1234
+11:30:12
+10 milliseconds
+
+
+POST
+/products/create?secrettoken=secret1234
+11:31:37
+5 milliseconds
+
+
+GET
+/products/
+11:31:59
+2 milliseconds
+
+
+GET
+/products/?secrettoken=secret1234
+11:32:05
+0 milliseconds
+
+
+GET
+/signup
+11:35:02
+4 milliseconds
+
+
+GET
+/signup
+11:35:20
+4 milliseconds
+
+
+POST
+/signup
+11:36:04
+2 milliseconds
+
+
+POST
+/login
+11:37:01
+1 milliseconds
+
+
+GET
+/products
+11:37:59
+1 milliseconds
+
+
+GET
+/products?secrettoken=secret1234
+11:38:22
+0 milliseconds
+
+
