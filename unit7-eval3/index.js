@@ -4,10 +4,10 @@ const jwt = require("jsonwebtoken")
 require("dotenv").config()
 const cors = require("cors")
 
-const {connection} = require("./config/db")
-const {UserModel} = require("./models/User.model")
-const {blogRouter} = require("./routes/blog.routes")
-const {authentication} = require("./middlewares/authentication")
+const {connection} = require("./Database/db")
+const {UserModel} = require("./models/user")
+const {blogRouter} = require("./routes/routes")
+const {authentication} = require("./Middlewares/auth")
 
 
 const app = express()
