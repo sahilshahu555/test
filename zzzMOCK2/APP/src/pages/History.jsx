@@ -7,11 +7,14 @@ const History = () => {
 const dispatch=useDispatch()
 const {trackerArray}=useSelector((store)=>store)
   const getData=()=>{
-    axios.get("https://abcd-zc44.onrender.com/Tracker").then((res)=>dispatch({type:"TRACKER",payload:res.data})).catch((err)=>{console.log(err)})
+    axios.get("https://abcd-zc44.onrender.com/Tracker")
+    .then((res)=>dispatch({type:"TRACKER",payload:res.data}))
+    .catch((err)=>{console.log(err)})
   }
 
   const deleteData=(id)=>{
-    axios.delete(`https://abcd-zc44.onrender.com/Tracker/${id}`).then((res)=>getData()).catch((err)=>{console.log(err)})
+    axios.delete(`https://abcd-zc44.onrender.com/Tracker/${id}`)
+    .then((res)=>getData()).catch((err)=>{console.log(err)})
   }
 
   useEffect(() => {
@@ -29,7 +32,11 @@ const {trackerArray}=useSelector((store)=>store)
             <p>{elm.type}</p>
           </Box>
           <Box>
-            {elm.type==="Income"?(<h4 style={{color:"green"}}>+{elm.amount}</h4>):(<h4 style={{color:"red"}}>-{elm.amount}</h4>)}
+            {elm.type==="Income"?(
+               <h4 style={{color:"green"}}>+{elm.amount}</h4>
+            ):(
+               <h4 style={{color:"red"}}>-{elm.amount}</h4>
+            )}
             <Box>
               <Button>Edit</Button>
               <Button onClick={()=>{deleteData(elm.id)}}>Delete</Button>
