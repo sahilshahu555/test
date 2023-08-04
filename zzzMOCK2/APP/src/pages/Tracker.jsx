@@ -61,10 +61,10 @@ const Tracker = () => {
         </>)}
         </Select>
         {/* */}
-          <FormLabel>Amount</FormLabel>
-        <Input type='text' name="amount" value={data.amount} onChange={handleChange} />
+          <FormLabel>Amount :</FormLabel>
+        <Input type='text' name="amount" placeholder='Enter Amount' value={data.amount} onChange={handleChange} />
       
-      <FormLabel></FormLabel>
+      <FormLabel>Date :</FormLabel>
         <Input type='date' name="date" value={data.date} onChange={handleChange} />
      <Button colorScheme="blue" onClick={handleSubmit}>Create</Button>
   </FormControl>
