@@ -7,7 +7,6 @@ import Signup from "../pages/Signup.jsx"
 
 import { useSelector } from 'react-redux'
 
-
 const AllRoutes = () => {
   const {auth}=useSelector((store)=>store);
   return (
