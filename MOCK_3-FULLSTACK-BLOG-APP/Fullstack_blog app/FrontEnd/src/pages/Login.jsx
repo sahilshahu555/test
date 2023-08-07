@@ -38,8 +38,11 @@ const handleSubmit=(e)=>{
         }}
       >
        
-        <input type="text" name="email" placeholder='enter email' value={user.email} onChange={handleChange}/>
-        <input type="text" name="password" placeholder='enter password'  value={user.password} onChange={handleChange}/>
+        <input type="text" name="email" placeholder='enter email' 
+        value={user.email} onChange={handleChange}/>
+        
+        <input type="text" name="password" placeholder='enter password' 
+         value={user.password} onChange={handleChange}/>
        
         <input type="submit" />
       </form>

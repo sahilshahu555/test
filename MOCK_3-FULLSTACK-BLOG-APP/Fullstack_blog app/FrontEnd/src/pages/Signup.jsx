@@ -24,7 +24,7 @@ const handleSubmit=(e)=>{
     navigate("/login")
     setUser({  name:"",email:"", password:"" })
     })
-    
+
     .catch((err)=>{console.log(err)})
 }
 console.log(user)
@@ -39,9 +39,15 @@ console.log(user)
             gap:"20",padding:"20px"
         }}
       >
-        <input type="text" name="name" placeholder='enter name' value={user.name} onChange={handleChange}/>
-        <input type="text" name="email" placeholder='enter email' value={user.email} onChange={handleChange}/>
-        <input type="text" name="password" placeholder='enter password'  value={user.password} onChange={handleChange}/>
+        <input type="text" name="name" placeholder='enter name' 
+        value={user.name} onChange={handleChange}/>
+
+        <input type="text" name="email" placeholder='enter email' 
+        value={user.email} onChange={handleChange}/>
+
+        <input type="text" name="password" placeholder='enter password' 
+         value={user.password} onChange={handleChange}/>
+         
         <input type="submit" />
       </form>
     </div>
