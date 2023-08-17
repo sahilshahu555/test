@@ -8,7 +8,6 @@ import Login from '../pages/Login'
 const AllRoutes = () => {
   return (
     <Routes>
-
       <Route path="/" element={<HomeTodo/>} />
       <Route path="/add" element={<AddTodo/>} />
       <Route path="/edit/:id" element={<EditTodo/>} />
