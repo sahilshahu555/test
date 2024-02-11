@@ -7,7 +7,7 @@ const blogRouter = Router()
 // GET METHOD
 blogRouter.get("/", async (req, res) => {
     const blogs = await BlogModel.find({user_id:req.user_id})
-    res.send({blogs : blogs})
+    res.send({blogs : blogs,mess:"success"})
 })
 // POST METHOD
 blogRouter.post("/create",async(req,res)=>{
